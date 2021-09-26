@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 600,
+  "title": "United States Airports Connection in 2008",
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-tutorials/master/tutorials/airports/data/us-10m.json",
+        "format": {"type": "topojson", "feature": "states"}
+      },
+      "projection": {"type": "albersUsa"},
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179/main/flights-airport.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "tooltip": {"content": "data"},
+        "opacity": 0.8,
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "origin_sum",
+          "type": "quantitative",
+          "scale": {"rangeMax": 5000},
+          "title": "Total Flight"
+        },
+        "color": {
+          "field": "origin_sum",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangered"}
+        },
+        "tooltip": [
+          {"field": "origin", "type": "ordinal", "title": " Airport"},
+          {
+            "field": "origin_sum",
+            "type": "quantitative",
+            "title": "Total Flights"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
