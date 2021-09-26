@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 900,
   "height": 600,
-  "title": "United States Airports Connection in 2008",
+  "title": "United States Airports Flights in 2008",
   "layer": [
     {
       "data": {
