@@ -14,7 +14,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179/main/flights-airport.csv"
+        "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179/main/flights.csv"
       },
       "mark": {
         "type": "circle",
@@ -30,7 +30,7 @@
           "field": "origin_sum",
           "type": "quantitative",
           "scale": {"rangeMax": 5000},
-          "title": "Total Flight"
+          "title": "Total Flights"
         },
         "color": {
           "field": "origin_sum",
