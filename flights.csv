@@ -1,4 +1,4 @@
-origin,destination,count,origin_group,origin_count,iata,name,city,state,country,latitude,longitude,origin_count,origin_sum
+origin,destination,count,origin_group,origin_total_flights,iata,name,city,state,country,latitude,longitude,origin_count,origin_sum
 ABE,ATL,853,ABE,4807,00M,Thigpen,Bay Springs,MS,USA,31.95376472,-89.23450472,#N/A,0
 ABE,BHM,1,ABI,2660,00R,Livingston Municipal,Livingston,TX,USA,30.68586111,-95.01792778,#N/A,0
 ABE,CLE,805,ABQ,41146,00V,Meadow Lake,Colorado Springs,CO,USA,38.94574889,-104.5698933,#N/A,0
