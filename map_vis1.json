@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 600,
+  "title": "United States Origin Airports Flights in 2008",
+  "params": [
+    {
+      "name": "Flights_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 400000,
+        "step": 10000,
+        "name": "Minimum Flights: "
+      }
+    },
+    {
+      "name": "State_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "CA", "TX", "FL", "NY", "PA", "IL", "OH", "GA", "NC", "MI", "CO"
+        ],
+        "labels": [
+          "Show All",
+          "CALIFORNIA", "TEXAS", "FLORIDA", "NEW YORK", "PENNSYLVANIA",
+          "ILLINOIS", "OHIO", "GEORGIA", "NORTH CAROLINA",
+          "MICHIGAN", "COLORADO"
+        ],
+        "name": "State Selection: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-tutorials/master/tutorials/airports/data/us-10m.json",
+        "format": {"type": "topojson", "feature": "states"}
+      },
+      "projection": {"type": "albersUsa"},
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/flights.csv"
+      },
+      "transform": [
+        {"filter": "datum.origin_sum > Flights_Above"},
+        {"filter": "State_selection == null || datum.state == State_selection"}
+      ],
+      "mark": {
+        "type": "circle",
+        "tooltip": {"content": "data"},
+        "opacity": 0.8,
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "origin_sum",
+          "type": "quantitative",
+          "scale": {"rangeMax": 5000},
+          "title": "Total Flights"
+        },
+        "color": {
+          "field": "origin_sum",
+          "type": "quantitative",
+          "scale": {"scheme": "yelloworangered"}
+        },
+        "tooltip": [
+          {"field": "state", "type": "ordinal", "title": "State"},
+          {"field": "city", "type": "ordinal", "title": "City Name"},
+          {"field": "name", "type": "ordinal", "title": "Airport Name"},
+          {"field": "iata", "type": "ordinal", "title": " Airport Code"},
+          {
+            "field": "origin_sum",
+            "type": "quantitative",
+            "title": "Total Origin Flights",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data":{"url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/flights.csv"},
+      "transform": [{
+        "filter":{
+        "field": "name",
+        "oneOf": ["William B Hartsfield-Atlanta Intl","Chicago O'Hare International","Dallas-Fort Worth International", "Denver Intl", "Los Angeles International"]
+      }
+      }],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "name", "type": "nominal"},
+        "color": {"value": "black"}
+        
+      }
+    }
+  ],
+  "config": {}
+}

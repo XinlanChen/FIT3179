@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Origin Airports Total Flights in Each State",
+  "data": {
+    "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/state_flights.csv"
+  },
+  "params": [
+    {
+      "name": "Flights_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 800000,
+        "step": 10000,
+        "name": "Minimum Flights: "
+      }
+    }],
+    "transform": [
+        {"filter": "datum.ori_state_flights > Flights_Above"}
+      ],
+  "encoding": {
+    "x": {
+      "field": "state_group",
+      "type": "nominal",
+      "axis": {"labelAngle": 0},
+      "title": "Sates",
+      "sort":"ascending"
+    },
+    "y": {
+      "field": "ori_state_flights",
+      "type": "quantitative",
+      "title": "Origin Flights"
+    },
+    "tooltip": [
+      {"field": "state_group", "type": "ordinal", "title": "State"},
+      {"field": "ori_state_flights", "type": "quantitative", 
+        "title": "State Origin Flights","format":","}
+    ]
+  },
+  "layer": [
+    {"mark": "bar"},
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "line-bottom",
+        "dx": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "ori_state_flights",
+          "type": "quantitative",
+          "format": ".2s"
+        }
+      }
+    }
+  ],
+  "config": {}
+}
