@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {"url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/months_flights.csv"},
+  "background":"#f0eed3",
+  "width": 600,
+  "height":250,
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"
+    }
+  },
+  "encoding": {
+    "x": {"timeUnit": "month", "field": "month","title":"Month 2008"},
+    "y": {"field": "flights", "type": "quantitative","title":"Flights"
+    },
+    "tooltip":[
+      {"field":"month", "type": "temporal", "timeUnit":"month","title":"Month"},
+      {"field":"flights", "type": "quantitative","title":"Monthly Total Flights", "format":","}
+    ]
+  },
+"config": {
+    "countTitle": "Count",
+    "axisY": {
+      "minExtent": 50
+    }
+  }
+}

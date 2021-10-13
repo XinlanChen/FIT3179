@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 600,
-  "title": "United States Origin Airports Flights in 2008",
+  "background":"#f0eed3",
+  "width": 1000,
+  "height": 650,
   "params": [
     {
       "name": "Flights_Above",

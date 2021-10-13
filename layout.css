@@ -1,0 +1,70 @@
+html,body{
+    background-color: #ece8a950;
+}
+
+.pure-u-1 img {
+    width: 100vw;
+    height: 20vw;
+}
+
+.title h1 {
+    font-size:30px;
+    text-align:center; 
+    line-height:1em; 
+    font-family:"Playfair Display", serif; 
+    text-transform:uppercase;
+    letter-spacing: 2px; 
+    color:rgb(99, 41, 41);
+}
+
+.title p{
+    font-size:15px;
+    text-align:center;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    width: 80%;
+    padding-bottom: 15px;
+    color: gray;
+}
+
+.bold_text{
+    font-weight: bold;
+    color: black;
+}
+
+/* linechart title */
+.text-1-3{
+    padding-left: 60px;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* linechart graph */
+.line_class-u-2-3{
+    float: left;
+    width: 60%;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+/* linechart text */
+.line_class-u-1-3{
+    float: left;
+    width: 30%;
+    padding: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+/* map title */
+.line_class-u-2-3 h3{
+    padding-left: 10px;
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* map graph */
+.map_class{
+    text-align: center;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/Top_airport.csv"
+  },
+  "height":300,
+  "width": 600,
+  "background":"#f0eed3",
+  "params": [{"name": "highlight", "select": "point"}],
+  "mark": {"type": "rect", "strokeWidth": 2},
+  "encoding": {
+    "y": {
+      "field": "top_destination",
+      "type": "nominal",
+      "title": "Destination Airport"
+    },
+    "x": {"field": "top_origin", "type": "nominal", "title": "Origin Airport"},
+    "fill": {
+      "field": "top_count",
+      "type": "quantitative",
+      "title": "Total Flights"
+    },
+    "stroke": {
+      "condition": {"param": "highlight", "empty": false, "value": "black"},
+      "value": null
+    },
+    "opacity": {"condition": {"param": "highlight", "value": 1}, "value": 0.5},
+    "order": {"condition": {"param": "highlight", "value": 1}, "value": 0},
+    "tooltip": [
+      {"field": "top_origin", "type": "ordinal", "title": "Origin Airport"},
+      {
+        "field": "top_destination",
+        "type": "ordinal",
+        "title": "Destination Airport"
+      },
+      {
+        "field": "top_count",
+        "type": "quantitative",
+        "title": "Total Flights",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "scale": {"bandPaddingInner": 0, "bandPaddingOuter": 0},
+    "view": {"step": 40},
+    "range": {"ramp": {"scheme": "yellowgreenblue"}},
+    "axis": {"domain": false}
+  }
+}

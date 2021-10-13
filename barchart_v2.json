@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Origin Airports Total Flights in Each State",
+  "background":"#f0eed3",
   "data": {
     "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/state_flights.csv"
   },
@@ -31,6 +31,12 @@
       "field": "ori_state_flights",
       "type": "quantitative",
       "title": "Origin Flights"
+    },
+    "color": {
+      "field":"ori_state_flights",
+      "type":"quantitative",
+      "scale":{"scheme":"goldred"},
+      "title":"Originating Flights"
     },
     "tooltip": [
       {"field": "state_group", "type": "ordinal", "title": "State"},
