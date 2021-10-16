@@ -1,11 +1,13 @@
-html,body{
+body {
     background-color: #ece8a950;
 }
 
-.pure-u-1 img {
-    width: 100vw;
-    height: 20vw;
+.page {
+    width: 1050px;
+    margin: auto;
+    padding-top: 35px;
 }
+
 
 .title h1 {
     font-size:30px;
@@ -18,53 +20,64 @@ html,body{
 }
 
 .title p{
-    font-size:15px;
+    font-size:12px;
     text-align:center;
     margin: auto;
-    font-family: 'Times New Roman', Times, serif;
-    width: 80%;
+    width: 82%;
     padding-bottom: 15px;
     color: gray;
+    font-family: sans-serif;
+}
+
+.bold_small_text{
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
 }
 
 .bold_text{
     font-weight: bold;
-    color: black;
+    color: rgb(139, 0, 0);
+    font-size:16px;
+    font-family: sans-serif;
 }
 
-/* linechart title */
-.text-1-3{
-    padding-left: 60px;
-    font-size: 23px;
-    font-family: 'Times New Roman', Times, serif;
+
+.pure-g {
+    margin-bottom:15px;
+    margin-top: 30px;
 }
 
-/* linechart graph */
-.line_class-u-2-3{
-    float: left;
-    width: 60%;
-    padding-left: 50px;
-    padding-top: 20px;
+
+
+.pure-u-1-3{
+    text-align: justify;
+    font-family: sans-serif;
 }
 
-/* linechart text */
-.line_class-u-1-3{
-    float: left;
-    width: 30%;
-    padding: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-}
 
-/* map title */
-.line_class-u-2-3 h3{
-    padding-left: 10px;
-    font-size: 27px;
-    font-family: 'Times New Roman', Times, serif;
-}
 
-/* map graph */
-.map_class{
+.center_vis{
     text-align: center;
-    padding-bottom: 20px;
 }
+
+.center-small-text{
+    font-size: 13px;
+    color:rgb(99, 41, 41);
+    font-family: sans-serif;
+}
+
+.center-text{
+    margin: auto;
+    text-align: justify;
+    width: 85%;
+    padding-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.small-font {
+    padding-top: 35px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+

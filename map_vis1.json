@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background":"#f0eed3",
-  "width": 1000,
-  "height": 650,
+  "background":"#f0eed300",
+  "width": 850,
+  "height": 450,
   "params": [
     {
       "name": "Flights_Above",
@@ -63,7 +63,7 @@
         "size": {
           "field": "origin_sum",
           "type": "quantitative",
-          "scale": {"rangeMax": 5000},
+          "scale": {"rangeMax": 3000},
           "title": "Total Flights"
         },
         "color": {

@@ -4,9 +4,11 @@
     "url": "https://raw.githubusercontent.com/XinlanChen/FIT3179_A2/main/dataset/Top_airport.csv"
   },
   "height":300,
-  "width": 600,
-  "background":"#f0eed3",
+  "width": 500,
+  "background":"#f5efaa00",
+ 
   "params": [{"name": "highlight", "select": "point"}],
+  
   "mark": {"type": "rect", "strokeWidth": 2},
   "encoding": {
     "y": {
@@ -14,14 +16,21 @@
       "type": "nominal",
       "title": "Destination Airport"
     },
-    "x": {"field": "top_origin", "type": "nominal", "title": "Origin Airport"},
+    "x": {
+      "field": "top_origin", 
+      "type": "nominal", 
+      "title": "Origin Airport",
+      "axis":{
+        "labelAngle":0
+      }},
     "fill": {
       "field": "top_count",
       "type": "quantitative",
-      "title": "Total Flights"
+      "title": "Total Flights",
+      "scale":{"scheme":"lightorange"}
     },
     "stroke": {
-      "condition": {"param": "highlight", "empty": false, "value": "black"},
+      "condition": {"param": "highlight", "empty": true, "value": "black"},
       "value": null
     },
     "opacity": {"condition": {"param": "highlight", "value": 1}, "value": 0.5},
@@ -42,9 +51,7 @@
     ]
   },
   "config": {
-    "scale": {"bandPaddingInner": 0, "bandPaddingOuter": 0},
     "view": {"step": 40},
-    "range": {"ramp": {"scheme": "yellowgreenblue"}},
-    "axis": {"domain": false}
+    "axis": {"grid": true, "tickBand": "extent"}
   }
 }
